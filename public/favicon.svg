@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="box" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b2f2f"/>
+      <stop offset="100%" stop-color="#5a1a1a"/>
+    </linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a03636"/>
+      <stop offset="100%" stop-color="#8b2f2f"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4e4c1"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#c49b2a"/>
+    </linearGradient>
+    <linearGradient id="bow1" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#f4e4c1"/>
+    </linearGradient>
+    <linearGradient id="bow2" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#f4e4c1"/>
+    </linearGradient>
+  </defs>
+  <!-- Shadow -->
+  <ellipse cx="32" cy="60" rx="22" ry="3" fill="#5a1a1a" opacity="0.15"/>
+  <!-- Box body -->
+  <rect x="8" y="30" width="48" height="28" rx="3" fill="url(#box)"/>
+  <!-- Box lid -->
+  <rect x="5" y="24" width="54" height="10" rx="3" fill="url(#lid)"/>
+  <!-- Vertical ribbon -->
+  <rect x="28" y="24" width="8" height="34" fill="url(#ribbon)"/>
+  <!-- Horizontal ribbon on lid -->
+  <rect x="5" y="26" width="54" height="6" rx="1" fill="url(#ribbon)"/>
+  <!-- Bow - left loop -->
+  <ellipse cx="24" cy="18" rx="10" ry="9" fill="url(#bow1)" transform="rotate(-15 24 18)"/>
+  <ellipse cx="24" cy="18" rx="6" ry="5.5" fill="url(#lid)" transform="rotate(-15 24 18)"/>
+  <!-- Bow - right loop -->
+  <ellipse cx="40" cy="18" rx="10" ry="9" fill="url(#bow2)" transform="rotate(15 40 18)"/>
+  <ellipse cx="40" cy="18" rx="6" ry="5.5" fill="url(#lid)" transform="rotate(15 40 18)"/>
+  <!-- Bow center knot -->
+  <ellipse cx="32" cy="22" rx="5" ry="5" fill="url(#ribbon)"/>
+  <ellipse cx="32" cy="22" rx="3" ry="3" fill="#c49b2a"/>
+  <!-- Subtle shine on box -->
+  <rect x="10" y="30" width="3" height="26" rx="1.5" fill="white" opacity="0.08"/>
+</svg>
