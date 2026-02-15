@@ -91,22 +91,22 @@ function Home() {
       <div className="fixed top-20 right-20 w-96 h-96 bg-[#8b2f2f]/5 rounded-full blur-3xl -z-10 animate-[float_20s_ease-in-out_infinite]" />
       <div className="fixed bottom-20 left-20 w-96 h-96 bg-[#1a4d2e]/5 rounded-full blur-3xl -z-10 animate-[float_25s_ease-in-out_infinite]" />
 
-      <div className="container mx-auto px-6 py-16 max-w-4xl relative z-10">
+      <div className="container mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-16 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-10 space-y-3 sm:mb-16 sm:space-y-4">
           <div className="inline-block mb-6 animate-[float_6s_ease-in-out_infinite]">
             <Sparkles
-              className="w-16 h-16 mx-auto text-[#d4af37]"
+              className="w-12 h-12 mx-auto text-[#d4af37] sm:w-16 sm:h-16"
               strokeWidth={1.5}
             />
           </div>
           <h1
-            className="text-7xl md:text-8xl font-bold text-[#5a1a1a] tracking-tight leading-none"
+            className="text-5xl font-bold text-[#5a1a1a] tracking-tight leading-none sm:text-6xl md:text-8xl"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             Secret Santa
           </h1>
-          <p className="text-xl text-[#5a1a1a]/70 font-light max-w-2xl mx-auto">
+          <p className="text-base text-[#5a1a1a]/70 font-light max-w-2xl mx-auto sm:text-xl">
             Create an elegant gift exchange.{' '}
             <span className="text-[#d4af37]">No login required</span> — share
             links, spread joy.
@@ -114,24 +114,24 @@ function Home() {
         </div>
 
         {/* Main card */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl shadow-[#5a1a1a]/10 p-8 md:p-12 border border-[#d4af37]/20">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl shadow-[#5a1a1a]/10 p-5 border border-[#d4af37]/20 sm:rounded-3xl sm:p-8 md:p-12">
           {/* Add participant input */}
-          <div className="mb-8">
-            <label className="block text-sm font-medium text-[#5a1a1a]/70 mb-3 tracking-wide uppercase">
+          <div className="mb-6 sm:mb-8">
+            <label className="block text-xs sm:text-sm font-medium text-[#5a1a1a]/70 mb-3 tracking-wide uppercase">
               Add Participants
             </label>
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <input
                 type="text"
                 value={newName}
                 onChange={(e) => setNewName(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Enter a name..."
-                className="flex-1 px-6 py-4 rounded-2xl border-2 border-[#d4af37]/30 focus:border-[#d4af37] focus:outline-none focus:ring-4 focus:ring-[#d4af37]/10 transition-all text-lg bg-white/50 placeholder:text-[#5a1a1a]/30"
+                className="flex-1 px-4 py-3 rounded-xl border-2 border-[#d4af37]/30 focus:border-[#d4af37] focus:outline-none focus:ring-4 focus:ring-[#d4af37]/10 transition-all text-base bg-white/50 placeholder:text-[#5a1a1a]/30 sm:px-6 sm:py-4 sm:rounded-2xl sm:text-lg"
               />
               <button
                 onClick={addParticipant}
-                className="px-8 py-4 bg-gradient-to-br from-[#8b2f2f] to-[#5a1a1a] text-white rounded-2xl hover:shadow-xl hover:shadow-[#5a1a1a]/30 transition-all hover:scale-105 active:scale-95 font-medium flex items-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-br from-[#8b2f2f] to-[#5a1a1a] text-white rounded-xl sm:rounded-2xl hover:shadow-xl hover:shadow-[#5a1a1a]/30 transition-all hover:scale-105 active:scale-95 font-medium flex items-center justify-center gap-2"
               >
                 <Plus className="w-5 h-5" />
                 Add
@@ -152,23 +152,23 @@ function Home() {
                 {participants.map((participant, idx) => (
                   <div
                     key={participant.id}
-                    className="group flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-[#faf8f3] to-white border border-[#d4af37]/10 hover:border-[#d4af37]/30 transition-all hover:shadow-md animate-in fade-in slide-in-from-left-2"
+                    className="group flex items-center justify-between gap-3 p-3 rounded-xl bg-gradient-to-r from-[#faf8f3] to-white border border-[#d4af37]/10 hover:border-[#d4af37]/30 transition-all hover:shadow-md animate-in fade-in slide-in-from-left-2 sm:p-4"
                     style={{
                       animationDelay: `${idx * 50}ms`,
                       animationFillMode: 'backwards',
                     }}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#8b2f2f] to-[#5a1a1a] flex items-center justify-center text-white font-semibold">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#8b2f2f] to-[#5a1a1a] flex items-center justify-center text-white font-semibold">
                         {participant.name.charAt(0).toUpperCase()}
                       </div>
-                      <span className="text-lg text-[#5a1a1a] font-medium">
+                      <span className="text-base sm:text-lg text-[#5a1a1a] font-medium break-all">
                         {participant.name}
                       </span>
                     </div>
                     <button
                       onClick={() => removeParticipant(participant.id)}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity p-2 hover:bg-[#5a1a1a]/5 rounded-lg"
+                      className="opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity p-2 hover:bg-[#5a1a1a]/5 rounded-lg"
                     >
                       <X className="w-5 h-5 text-[#5a1a1a]/50 hover:text-[#5a1a1a]" />
                     </button>
@@ -182,14 +182,14 @@ function Home() {
           <button
             onClick={goToGenerate}
             disabled={participants.length < 2}
-            className="w-full py-6 bg-gradient-to-r from-[#d4af37] via-[#f4e4c1] to-[#d4af37] bg-size-200 animate-[shimmer_3s_ease-in-out_infinite] text-[#5a1a1a] rounded-2xl font-bold text-xl shadow-lg shadow-[#d4af37]/30 hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-3"
+            className="w-full px-4 sm:px-8 py-4 sm:py-6 bg-gradient-to-r from-[#d4af37] via-[#f4e4c1] to-[#d4af37] bg-size-200 animate-[shimmer_3s_ease-in-out_infinite] text-[#5a1a1a] rounded-2xl font-bold text-base sm:text-xl shadow-lg shadow-[#d4af37]/30 hover:shadow-2xl hover:shadow-[#d4af37]/50 transition-all hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2 sm:gap-3 leading-tight text-center"
             style={{
               backgroundSize: '200% 100%',
             }}
           >
-            <Sparkles className="w-6 h-6" />
+            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
             Generate Secret Santa Assignments
-            <Sparkles className="w-6 h-6" />
+            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {participants.length < 2 && participants.length > 0 && (
@@ -199,15 +199,15 @@ function Home() {
           )}
 
           {participants.length === 0 && (
-            <div className="text-center py-12 text-[#5a1a1a]/40">
-              <Users className="w-16 h-16 mx-auto mb-4 opacity-30" />
-              <p className="text-lg">Add participants to get started</p>
+            <div className="text-center py-8 sm:py-12 text-[#5a1a1a]/40">
+              <Users className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 opacity-30" />
+              <p className="text-base sm:text-lg">Add participants to get started</p>
             </div>
           )}
         </div>
 
         {/* Footer info */}
-        <div className="mt-12 text-center space-y-3">
+        <div className="mt-8 sm:mt-12 text-center space-y-3">
           <p className="text-[#5a1a1a]/60 text-sm">
             ✦ All data is stored in the URL — no servers, no tracking ✦
           </p>

@@ -79,9 +79,9 @@ function Generate() {
       <div className="fixed top-20 left-20 w-96 h-96 bg-[#1a4d2e]/5 rounded-full blur-3xl -z-10 animate-[float_20s_ease-in-out_infinite]" />
       <div className="fixed bottom-20 right-20 w-96 h-96 bg-[#8b2f2f]/5 rounded-full blur-3xl -z-10 animate-[float_25s_ease-in-out_infinite]" />
 
-      <div className="container mx-auto px-6 py-16 max-w-5xl relative z-10">
+      <div className="container mx-auto max-w-5xl px-4 py-10 sm:px-6 sm:py-16 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <Link
             to="/"
             search={{ p }}
@@ -92,17 +92,17 @@ function Generate() {
           </Link>
           <div className="inline-block mb-6 animate-[float_6s_ease-in-out_infinite]">
             <Gift
-              className="w-16 h-16 mx-auto text-[#d4af37]"
+              className="w-12 h-12 mx-auto text-[#d4af37] sm:w-16 sm:h-16"
               strokeWidth={1.5}
             />
           </div>
           <h1
-            className="text-6xl md:text-7xl font-bold text-[#5a1a1a] tracking-tight mb-4"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold text-[#5a1a1a] tracking-tight mb-4"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             Assignments Ready!
           </h1>
-          <p className="text-lg text-[#5a1a1a]/70 font-light max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-[#5a1a1a]/70 font-light max-w-2xl mx-auto">
             Share each personalized link below. Each person will only see{' '}
             <span className="text-[#8b2f2f] font-medium">who they're giving to</span>.
           </p>
@@ -112,7 +112,7 @@ function Generate() {
         <div className="mb-8 flex justify-center">
           <button
             onClick={copyAllLinks}
-            className="px-6 py-3 bg-white/80 backdrop-blur-sm border-2 border-[#d4af37]/30 text-[#5a1a1a] rounded-xl hover:bg-[#d4af37]/10 hover:border-[#d4af37] transition-all flex items-center gap-2 font-medium shadow-lg hover:shadow-xl"
+            className="w-full sm:w-auto justify-center px-6 py-3 bg-white/80 backdrop-blur-sm border-2 border-[#d4af37]/30 text-[#5a1a1a] rounded-xl hover:bg-[#d4af37]/10 hover:border-[#d4af37] transition-all flex items-center gap-2 font-medium shadow-lg hover:shadow-xl text-sm sm:text-base"
           >
             {copiedAll ? (
               <>
@@ -129,11 +129,11 @@ function Generate() {
         </div>
 
         {/* Assignments grid */}
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
           {assignments.map((assignment, idx) => (
             <div
               key={assignment.giverId}
-              className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl shadow-[#5a1a1a]/10 p-6 border border-[#d4af37]/20 hover:border-[#d4af37]/50 transition-all animate-in fade-in slide-in-from-bottom-4"
+              className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl shadow-[#5a1a1a]/10 p-4 sm:p-6 border border-[#d4af37]/20 hover:border-[#d4af37]/50 transition-all animate-in fade-in slide-in-from-bottom-4"
               style={{
                 animationDelay: `${idx * 75}ms`,
                 animationFillMode: 'backwards',
@@ -146,7 +146,7 @@ function Generate() {
                   </div>
                   <div>
                     <h3
-                      className="text-2xl font-bold text-[#5a1a1a]"
+                      className="text-xl sm:text-2xl font-bold text-[#5a1a1a] break-all"
                       style={{ fontFamily: 'Playfair Display, serif' }}
                     >
                       {assignment.giver}
@@ -179,14 +179,14 @@ function Generate() {
         </div>
 
         {/* Instructions */}
-        <div className="mt-12 bg-gradient-to-r from-[#d4af37]/10 via-[#f4e4c1]/10 to-[#d4af37]/10 rounded-2xl p-8 border border-[#d4af37]/30">
+        <div className="mt-8 sm:mt-12 bg-gradient-to-r from-[#d4af37]/10 via-[#f4e4c1]/10 to-[#d4af37]/10 rounded-2xl p-5 sm:p-8 border border-[#d4af37]/30">
           <h3
-            className="text-2xl font-bold text-[#5a1a1a] mb-4"
+            className="text-xl sm:text-2xl font-bold text-[#5a1a1a] mb-4"
             style={{ fontFamily: 'Playfair Display, serif' }}
           >
             How to share
           </h3>
-          <ol className="space-y-3 text-[#5a1a1a]/70">
+          <ol className="space-y-3 text-sm sm:text-base text-[#5a1a1a]/70">
             <li className="flex gap-3">
               <span className="flex-shrink-0 w-6 h-6 bg-[#d4af37] text-white rounded-full flex items-center justify-center text-sm font-bold">
                 1
@@ -218,7 +218,7 @@ function Generate() {
         </div>
 
         {/* Footer */}
-        <div className="mt-12 text-center space-y-3">
+        <div className="mt-8 sm:mt-12 text-center space-y-3">
           <p className="text-[#5a1a1a]/60 text-sm">
             ✦ Links are secure and unique to each person ✦
           </p>
